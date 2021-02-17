@@ -10,7 +10,9 @@ namespace GarciaShop.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {}
-            public DbSet<Producto> Productos { get; set; }
+        public DbSet<Producto> Productos { get; set; }
+        public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<DetallePedido> DetallePedidos { get; set; }
         
     }
 }
