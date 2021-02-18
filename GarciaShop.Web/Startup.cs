@@ -1,4 +1,6 @@
 using GarciaShop.Data;
+using GarciaShop.Data.Interfaces;
+using GarciaShop.Data.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +26,11 @@ namespace GarciaShop.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<IProductoRepository, ProductoRepository>();
+            services.AddScoped<IPedidoRepository, PedidoRepository>();
+            services.AddScoped<IDetallePedidoRepository, DetallePedidoRepository>();
+
             services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddRazorPages();
         }

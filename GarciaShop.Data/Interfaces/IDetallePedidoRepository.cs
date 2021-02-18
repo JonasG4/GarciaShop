@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GarciaShop.Data.Interfaces
 {
-    interface IDetallePedidoRepository : IRepository<DetallePedido>
+    public interface IDetallePedidoRepository : IRepository<DetallePedido>
     {
     }
 }

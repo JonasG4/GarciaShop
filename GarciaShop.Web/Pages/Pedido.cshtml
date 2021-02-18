@@ -1,0 +1,33 @@
+﻿@page
+@model GarciaShop.Web.Pages.PedidoModel
+@{
+}
+
+<h1>Lista de Pedidos</h1>
+<a class="btn btn-success" asp-page="/CrearPedido">Crear Pedido</a>
+<br />
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre del Cliente</th>
+            <th>Fecha</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Productos)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.NombreProducto</td>
+                <td>@item.Existencias</td>
+                <td>
+                    <a class="btn btn-sm btn-info" asp-route-id="@item.Id" asp-page="/EditarProducto">Editar</a>
+                    <a class="btn btn-sm btn-danger" asp-route-id="@item.Id" asp-page="/EliminarProducto">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

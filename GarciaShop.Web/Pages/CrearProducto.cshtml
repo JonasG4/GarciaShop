@@ -1,0 +1,25 @@
+﻿@page
+@model GarciaShop.Web.Pages.CrearProductoModel
+@{
+}
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label asp-for="Producto.NombreProducto">Nombre del Producto</label>
+        <input type="text" class="form-control" asp-for="Producto.NombreProducto" />
+        <span class="text-danger" asp-validation-for="Producto.NombreProducto"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Producto.PrecioUnitario"></label>
+        <input type="text" class="form-control" asp-for="Producto.PrecioUnitario" />
+        <span class="text-danger" asp-validation-for="Producto.PrecioUnitario"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Producto.Existencias"></label>
+        <input type="number" class="form-control" asp-for="Producto.Existencias" />
+        <span class="text-danger" asp-validation-for="Producto.Existencias"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a class="btn btn-danger" asp-page="./Producto">Cancelar</a>
+</form>

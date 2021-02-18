@@ -6,7 +6,7 @@ using System.Text;
 
 namespace GarciaShop.Data.Repository
 {
-    class ProductoRepository : Repository<Producto>, IProductoRepository
+    public class ProductoRepository : Repository<Producto>, IProductoRepository
     {
         private readonly ApplicationDbContext _db;
         public ProductoRepository(ApplicationDbContext db) : base(db)
