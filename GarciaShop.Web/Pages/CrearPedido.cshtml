@@ -1,0 +1,20 @@
+﻿@page
+@model GarciaShop.Web.Pages.CrearPedidoModel
+@{
+}
+
+<form method="post">
+    <input type="hidden" asp-for="Pedido.Id" />
+    <div class="form-group">
+        <label asp-for="Pedido.NombreCliente">Nombre del Pedido</label>
+        <input type="text" class="form-control" asp-for="Pedido.NombreCliente" />
+        <span class="text-danger" asp-validation-for="Pedido.NombreCliente"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Pedido.Fecha"></label>
+        <input type="datetime" class="form-control" asp-for="Pedido.Fecha" />
+        <span class="text-danger" asp-validation-for="Pedido.Fecha"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a class="btn btn-danger" asp-page="./Pedido">Cancelar</a>
+</form>

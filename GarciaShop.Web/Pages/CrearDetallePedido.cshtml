@@ -1,0 +1,25 @@
+﻿@page
+@model GarciaShop.Web.Pages.CrearDetallePedidoModel
+@{
+}
+
+<form method="post">
+    <input type="hidden" asp-for="DetallePedido.Id" />
+    <div class="form-group">
+        <label asp-for="DetallePedido.PedidoID"></label>
+        <input type="text" class="form-control" asp-for="DetallePedido.PedidoID" />
+        <span class="text-danger" asp-validation-for="DetallePedido.PedidoID"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DetallePedido.ProductoID"></label>
+        <input type="text" class="form-control" asp-for="DetallePedido.ProductoID" />
+        <span class="text-danger" asp-validation-for="DetallePedido.ProductoID"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DetallePedido.Cantidad"></label>
+        <input type="number" class="form-control" asp-for="DetallePedido.Cantidad" />
+        <span class="text-danger" asp-validation-for="DetallePedido.Cantidad"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a class="btn btn-danger" asp-page="./DetalleCantidad">Cancelar</a>
+</form>
